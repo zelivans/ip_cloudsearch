@@ -64,9 +64,6 @@ def check_known(ip_list, resultfile, use_progressbar=False, ignore_none=False):
     azure_subnet = list(get_aws_subnet())
 
     if use_progressbar:
-        #import progressbar
-        #bar = progressbar.ProgressBar(maxval=len(ip_list), widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Counter(), ' | ', progressbar.Percentage()])
-        #bar.start()
         from tqdm import tqdm
 
     for ip in tqdm(ip_list):

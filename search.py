@@ -86,18 +86,18 @@ def check_known(ip_list, resultfile, use_progressbar=False, ignore_none=False):
             resultfile.write("%s: %s\n" % (ip, src))
 
 if "__main__" == __name__:
-    #ip_list_fpath = "../dhs-ips-newlines-clear.txt"
+    ip_list_fpath = "../dhs-ips-newlines-clear.txt"
     
     # Get list of ips to check from file, set to remove dups
-    #ip_list = set(line.strip() for line in open(ip_list_fpath, "r"))
+    ip_list = set(line.strip() for line in open(ip_list_fpath, "r"))
     # The list has problematic entries too.
-    #ip_list.remove('')
+    ip_list.remove('')
     
     # cvs list
-    import csv
-    with open('i.csv', 'r') as csvf:
-        reader = csv.reader(csvf)
-        ip_list = set(row[0] for row in reader)
+    # import csv
+    # with open('i.csv', 'r') as csvf:
+    #    reader = csv.reader(csvf)
+    #    ip_list = set(row[0] for row in reader)
         
-        with open('csvresult.res', 'w') as res:
+        with open('dhs.res', 'w') as res:
             check_known(ip_list, res, True, False)

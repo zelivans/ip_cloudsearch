@@ -99,5 +99,5 @@ if "__main__" == __name__:
     #    reader = csv.reader(csvf)
     #    ip_list = set(row[0] for row in reader)
         
-        with open('dhs.res', 'w') as res:
-            check_known(ip_list, res, True, False)
+    with open('dhs.res', 'w') as res:
+        check_known(ip_list, res, True, False)
